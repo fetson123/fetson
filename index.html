@@ -1045,7 +1045,10 @@ fbq('track', 'PageView');
 // Evento Contactar: al tocar cualquier botón de WhatsApp (hero, barra fija o footer)
 document.addEventListener('click', function (e) {
   if (e.target.closest('[data-cta]')) {
-    fbq('track', 'Contact');
+  fbq('track', 'Contact', {
+  value: 1.00,
+  currency: 'USD'
+});
   }
 }, true);
 </script>
