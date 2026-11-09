@@ -980,21 +980,22 @@ const WHATSAPP_MESSAGE = "Hola ¿Me crearias un usuario? Mi nombre es ...";
 
     // Cada clic elige al azar uno de los números válidos
     var number = pool[Math.floor(Math.random() * pool.length)];
-    // Identifica el conjunto de anuncios mediante el parámetro ?origen= de la URL.
-    // Ejemplo: ?origen=conjunto1
+    // Identificar el conjunto de anuncios
     var params = new URLSearchParams(window.location.search);
     var origen = params.get("origen");
+
     var etiquetasOrigen = {
       "conjunto1": "Conjunto 1",
       "conjunto2": "Conjunto 2",
       "conjunto3": "Conjunto 3"
     };
+
     var etiquetaOrigen = etiquetasOrigen[origen] || "No identificado";
-    var mensajeConOrigen = WHATSAPP_MESSAGE + "\\n\\nOrigen: " + etiquetaOrigen;
+
+    var mensajeConOrigen = WHATSAPP_MESSAGE + "\n\nOrigen: " + etiquetaOrigen;
 
     var url = "https://wa.me/" + number + "?text=" + encodeURIComponent(mensajeConOrigen);
 
-    // location.href funciona bien en Android (app o web) e iPhone (Safari/Chrome)
     window.location.href = url;
   }
 
