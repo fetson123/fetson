@@ -982,12 +982,12 @@ const WHATSAPP_MESSAGE = "Hola ¿Me crearias un usuario? Mi nombre es ...";
     var number = pool[Math.floor(Math.random() * pool.length)];
     // Identificar el conjunto de anuncios
     var params = new URLSearchParams(window.location.search);
-    var origen = params.get("COD");
+    var origen = params.get("origen");
 
     var etiquetasOrigen = {
-      "conjunto1": "Fetson1",
-      "conjunto2": "Fetson2",
-      "conjunto3": "Fetson3"
+      "conjunto1": "Fetson 1",
+      "conjunto2": "Fetson 2",
+      "conjunto3": "Fetson 3"
     };
 
     var etiquetaOrigen = etiquetasOrigen[origen] || "No identificado";
